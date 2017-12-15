@@ -1,10 +1,10 @@
-import {About} from './components/pages/About';
-import {Form} from './components/pages/Form';
+import {PlayPage} from './components/pages/PlayPage';
+import {SearchPage} from './components/pages/SearchPage';
 
 export const routes = [{
-    path: '/about/',
-    component: About
+    path: '/play/:id',
+    component: PlayPage
 }, {
-    path: '/form/',
-    component: Form
+    path: '/search/',
+    component: SearchPage
 }];
