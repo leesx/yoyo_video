@@ -10,11 +10,12 @@ export class PlayPage extends Component{
     }
     componentDidMount(){
         const route = getCurrentRoute();
+        const {videoID} = route.params;
 
-        const {id} = route.params;
-        const iframeURL = `http://api.baiyug.cn/vip/index.php?url=${videoData[id].link}`;
+        const curpageData = videoData.find(item=>item.video_id == videoID);
+        const iframeURL = `http://api.baiyug.cn/vip/index.php?url=${curpageData.link}`;
         this.setState({
-            data:videoData[id],
+            data:curpageData,
             iframeURL
         })
 

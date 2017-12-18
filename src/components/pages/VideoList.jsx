@@ -16,8 +16,8 @@ export default class VideoList extends Component {
     }
 
     renderItem = () => {
-        const {listItems} = this.state
-        const currentData = videoData.splice(pages_num,10);
+        const {listItems} = this.state;
+        const currentData = videoData.slice(pages_num,pages_num+10);
         const items = currentData.map((item, index) => {
             return (
                 <ListItem
@@ -25,7 +25,7 @@ export default class VideoList extends Component {
                     title={item.title}
                     badge={item.score}
                     badgeColor="green"
-                    link={`/play/${index}`}
+                    link={`/play/${item.video_id}`}
                     media={`<img src=${`${appConfig.VIDEO_PIC_URL}/${item.img_name}`} />`}
                     //subtitle={item.role_name}
                     text={`主演:${item.role_name}`}
