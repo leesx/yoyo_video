@@ -1,3 +1,19 @@
 /* =========
 Your custom styles go here
  ========= */
+
+ .search-results .list-block.media-list .item-media{
+   width:60px;
+   height:60px;
+   overflow: hidden;
+ }
+ .search-results .list-block.media-list .item-media img{
+   max-width:100%;
+ }
+
+.search-results .list-block.media-list .item-title{
+    font-size:14px;
+  }
+.search-results .list-block.media-list .item-text{
+  font-size: 12px;
+}

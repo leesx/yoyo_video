@@ -18,7 +18,9 @@ import {
 } from "framework7-react";
 import VideoList from "./pages/VideoList";
 
-import {getFramework7} from './App'
+import {getFramework7} from './App';
+import appConfig from "./../utils/appConfig";
+const videoData = appConfig.IQIYI_DATA.data;
 
 const MainViews = (props, context) => {
     return (
@@ -37,9 +39,6 @@ const MainViews = (props, context) => {
                 {/* Pages */}
                 <Pages>
                     <Page>
-                        <Searchbar
-                            placeholder="输入电影名称或者主演名称"
-                        />
                         <ContentBlockTitle onClick={() => getFramework7().mainView.router.loadPage('/search/')}>欢迎来到悠悠视吧</ContentBlockTitle>
                         <ContentBlock inner>
                             <p>搜集网络大片一起共享</p>
@@ -48,17 +47,10 @@ const MainViews = (props, context) => {
                             </List>
                         </ContentBlock>
                         <ContentBlockTitle>最新电影</ContentBlockTitle>
-                        {/*<List>*/}
-                        {/*<ListItem link="/about/" title="About"></ListItem>*/}
-                        {/*<ListItem link="/form/" title="Form"></ListItem>*/}
-                        {/*</List>*/}
-                        <VideoList />
+
+                        <VideoList videoData={videoData} />
                     </Page>
                 </Pages>
-                {/*<Toolbar tabbar labels>*/}
-                {/*<Link icon="icon-back" text="首页" tabLink="#tab1"></Link>*/}
-                {/*<Link icon="icon-2" text="搜索" tabLink="#tab2"></Link>*/}
-                {/*</Toolbar>*/}
             </View>
         </Views>
     );
