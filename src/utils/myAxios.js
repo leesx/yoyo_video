@@ -10,7 +10,7 @@ const myAxios = axios.create({
     baseURL        : appConfig.baseURL,
     headers        : {
         'Content-Type': 'application/json',
-        //'Access-Control-Allow-Origin': '*.hualala.com',
+        //'Access-Control-Allow-Origin': '*.leesx.com',
     },
     timeout        : NET_TIMEOUT,
     method         : 'get', // default
